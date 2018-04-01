@@ -1,0 +1,70 @@
+[
+     {
+        "id": "tools",
+        "children":
+        [{
+            "caption": "SublimeREPL",
+            "mnemonic": "R",
+            "id": "SublimeREPL",
+            "children":
+            [
+                {"caption": "Python",
+                "id": "Python",
+
+                 "children":[
+                    {"command": "project_repl_open",
+                     "caption": "Python",
+                     "id": "repl_python",
+                     "mnemonic": "P",
+                     "args": {
+                        "cmd": ["python", "-i", "-u"],
+                        "view_id": "*REPL* [Python3]",
+                        "external_id": "Python3",
+                        "open_file": ""
+                        }
+                    },
+                    {"command": "python_virtualenv_repl",
+                     "id": "python_virtualenv_repl",
+                     "caption": "Python - virtualenv"
+                    },
+                    {"command": "project_repl_open",
+                     "caption": "Python - PDB current file",
+                     "id": "repl_python_pdb",
+                     "mnemonic": "D",
+                     "args": {
+                        "view_id": "*REPL* [Python3 PDB]",
+                        "external_id": "Python3 PDB",
+                        "cmd_flags": ["-i", "-u", "-m", "pdb"],
+                        "open_file": "$file_basename"
+                        }
+                    },
+                    {"command": "project_repl_open",
+                     "caption": "Python - RUN current file",
+                     "id": "repl_python_run",
+                     "mnemonic": "R",
+                     "args": {
+                        "view_id": "*REPL* [Python3]",
+                        "external_id": "Python3",
+                        "open_file": "$file_basename"
+                        }
+                    },
+                    {"command": "project_repl_open",
+                     "caption": "Python - IPython",
+                     "id": "repl_python_ipython",
+                     "mnemonic": "I",
+                     "args": {
+                        "view_id": "*REPL* [IPython]",
+                        "external_id": "IPython",
+                        "extend_env": {
+                            "PYTHONIOENCODING": "utf-8",
+                            "SUBLIMEREPL_EDITOR": "$editor"
+                        },
+                        "open_file": "${packages}/User/SublimeREPL/config/Python/ipy_repl.py",
+                        "autocomplete_server": true
+                    }
+                    }
+                ]}
+            ]
+        }]
+    }
+]
