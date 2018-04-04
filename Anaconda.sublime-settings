@@ -6,6 +6,9 @@
     [
         "E309",
     ],
+    "anaconda_gutter_theme": "simple",
+    "anaconda_linter_mark_style": "squiggly_underline",
+    "anaconda_linter_underlines": true,
     "anaconda_linter_phantoms": false,
     "pep8": true,
     "pep8_ignore":
@@ -18,9 +21,7 @@
     "pep257_ignore":
     [
         "D203",
-        "D209"
+        "D209",
+        "D213"
     ],
-    "anaconda_gutter_theme": "simple",
-    "anaconda_linter_mark_style": "none",
-    "anaconda_linter_underlines": false,
 }

@@ -14,7 +14,7 @@ class ProjectReplOpenCommand(sublime_plugin.TextCommand):
             python_interpreter=None,
             cmd_flags=["-i", "-u"],
             open_file="$file",
-            **kwds):
+            **kwargs):
         """Called on project_repl_open command."""
         self.save_changed_files()
 
@@ -27,20 +27,19 @@ class ProjectReplOpenCommand(sublime_plugin.TextCommand):
 
             cmd.extend(cmd_flags)
             cmd.append(open_file)
-        print(cmd)
-        self.view.window().run_command(
-            'repl_open', {
-                'encoding': "utf8",
-                'type': "subprocess",
-                'syntax': "Packages/Python/Python.tmLanguage",
-                'view_id': view_id,
-                'external_id': external_id,
-                'cmd': cmd,
-                'cwd': cwd,
-                'extend_env': extend_env,
-                "autocomplete_server": 'true'
-            }
-        )
+
+        d = {
+            'encoding': "utf8",
+            'type': "subprocess",
+            'syntax': "Packages/Python/Python.tmLanguage",
+            'view_id': view_id,
+            'external_id': external_id,
+            'cmd': cmd,
+            'cwd': cwd,
+            'extend_env': extend_env
+        }
+        d.update(**kwargs)
+        self.view.window().run_command('repl_open', d)
 
     def save_changed_files(self):
         """Write out every buffer (active window) with changes and a file name."""
