@@ -1,0 +1,1 @@
+On Mac, replace your ~/Library/Application Support/Sublime Text 3/Packages/User folder contents with this repo to auto-install all plugins and settings. You’ll need to restart Sublime for everything to take effect.
